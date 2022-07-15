@@ -2,15 +2,6 @@ body {
   background: rgb(229, 229, 229);
 }
 
-/* .content {
-  margin: 0 auto;
-  width: 80%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-} */
 .container {
   display: flex;
   flex-direction: column;
@@ -18,32 +9,32 @@ body {
 }
 .wrap {
   display: flex;
-  width: 90%
+  width: 95%
 }
 .toolbar {
   margin: 12px 0px;
-  width: 300px;
+  width: 28vw;
 }
 h6 {
   padding: 10px;
   margin-bottom: 10px;
 }
 .bar-chart {
-  height: 30vh;
-  width: 40vw;
+  height: 40vh;
+  width: 65vw;
   padding: 20px;
 }
 .line-chart {
-  height: 300px;
-  width: 400px;
+  height: 40vh;
+  width: 65vw;
   padding: 20px;
 }
 .pie-chart {
-  height: 300px;
-  width: 400px;
+  height: 40vh;
+  width: 65vw;
   padding: 20px;
 }
 .table {
-  height: 200px;
-  width: 300px;
+  height: 30vh;
+  width: 28vw;
 }
