@@ -52,14 +52,14 @@ run();
   function exportDivAsImage() {
       html2canvas(exportDiv).then(function(canvas) { //converts content to canvas
           const image = canvas.toDataURL('image/png', 1.0); //converts to image, full quality
-
+          
           const a = document.createElement('a'); //create a download link
           a.href = image;
           a.download = 'exported-image.png'; //sets the download name of what link being downloaded
           a.click(); //simulates user clicking the link
       });
   }
-
+  
   exportButton.addEventListener('click', exportDivAsImage);
 
 
