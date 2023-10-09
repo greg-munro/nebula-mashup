@@ -54,13 +54,12 @@ h6 {
   width: 28vw;
 }
 
-#exportButton {
+.exportButton {
   width: 60px;
   height: auto;
   border-radius: 10px;
   cursor: pointer;
   background-color: #3a7ec7;
-  /* Change background color on hover */
   color: #fff;
   padding: 10px;
   margin-bottom: 10px;

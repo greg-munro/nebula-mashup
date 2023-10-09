@@ -46,22 +46,26 @@ async function run() {
 
 run();
 
-  const exportDiv = document.querySelector('.bar-chart');
-  const exportButton = document.getElementById('exportButton');
 
-  function exportDivAsImage() {
-      html2canvas(exportDiv).then(function(canvas) { //converts content to canvas
-          const image = canvas.toDataURL('image/png', 1.0); //converts to image, full quality
-          
-          const a = document.createElement('a'); //create a download link
-          a.href = image;
-          a.download = 'exported-image.png'; //sets the download name of what link being downloaded
-          a.click(); //simulates user clicking the link
-      });
-  }
-  
-  exportButton.addEventListener('click', exportDivAsImage);
+const exportButtons = document.querySelectorAll('.exportButton');
+const exportableDivs = document.querySelectorAll('.exportable');
 
+function exportVisualizationAsImage(exportableDiv) {
+  html2canvas(exportableDiv).then((canvas) => {
+    const image = canvas.toDataURL('image/png', 1.0);
+
+    const a = document.createElement('a');
+    a.href = image;
+    a.download = 'export.png';
+    a.click();
+  });
+}
+exportButtons.forEach((exportButton, i) => {
+  exportButton.addEventListener('click', () => {
+    const exportableDiv = exportableDivs[i];
+    exportVisualizationAsImage(exportableDiv);
+  });
+});
 
 
 
