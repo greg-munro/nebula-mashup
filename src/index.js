@@ -45,3 +45,30 @@ async function run() {
 }
 
 run();
+
+  const exportDiv = document.querySelector('.bar-chart');
+  const exportButton = document.getElementById('exportButton');
+
+  // Function to export the div as an image
+  function exportDivAsImage() {
+      // Use html2canvas to capture the div as an image
+      html2canvas(exportDiv).then(function(canvas) {
+          // Convert the canvas to a data URL (JPG format)
+          const image = canvas.toDataURL('image/jpg'); 
+
+          // Create a download link
+          const a = document.createElement('a');
+          a.href = image;
+          a.download = 'exported-image.jpg'; // Specify the filename and extension
+
+          // Simulate a click on the download link
+          a.click();
+      });
+  }
+
+  // Add a click event listener to the export button
+  exportButton.addEventListener('click', exportDivAsImage);
+
+
+
+
