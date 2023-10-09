@@ -49,24 +49,17 @@ run();
   const exportDiv = document.querySelector('.bar-chart');
   const exportButton = document.getElementById('exportButton');
 
-  // Function to export the div as an image
   function exportDivAsImage() {
-      // Use html2canvas to capture the div as an image
-      html2canvas(exportDiv).then(function(canvas) {
-          // Convert the canvas to a data URL (JPG format)
-          const image = canvas.toDataURL('image/jpg'); 
+      html2canvas(exportDiv).then(function(canvas) { //converts content to canvas
+          const image = canvas.toDataURL('image/png', 1.0); //converts to image, full quality
 
-          // Create a download link
-          const a = document.createElement('a');
+          const a = document.createElement('a'); //create a download link
           a.href = image;
-          a.download = 'exported-image.jpg'; // Specify the filename and extension
-
-          // Simulate a click on the download link
-          a.click();
+          a.download = 'exported-image.png'; //sets the download name of what link being downloaded
+          a.click(); //simulates user clicking the link
       });
   }
 
-  // Add a click event listener to the export button
   exportButton.addEventListener('click', exportDivAsImage);
 
 

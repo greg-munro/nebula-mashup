@@ -8,7 +8,6 @@ body {
   align-items: center;
 }
 .wrap {
-  display: flex;
   width: 95%
 }
 .toolbar {
@@ -37,4 +36,10 @@ h6 {
 .table {
   height: 30vh;
   width: 28vw;
+}
+
+#exportButton {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
 }
