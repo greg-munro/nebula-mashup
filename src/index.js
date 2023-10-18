@@ -51,16 +51,17 @@ const exportButtons = document.querySelectorAll('.exportButton');
 const exportableDivs = document.querySelectorAll('.exportable');
 
 const options = {
-  background: 'white'
+  background: 'white',
+allowTaint: false
 }
 
 function exportVisualizationAsImage(exportableDiv) {
   html2canvas(exportableDiv, options).then((canvas) => {
-    const image = canvas.toDataURL('image/png', 1.0);
+    const image = canvas.toDataURL('image/jpeg', 1.0);
 
     const a = document.createElement('a');
     a.href = image;
-    a.download = 'export.png';
+    a.download = 'export.jpg';
     a.click();
   });
 }
