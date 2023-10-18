@@ -50,8 +50,12 @@ run();
 const exportButtons = document.querySelectorAll('.exportButton');
 const exportableDivs = document.querySelectorAll('.exportable');
 
+const options = {
+  background: 'white'
+}
+
 function exportVisualizationAsImage(exportableDiv) {
-  html2canvas(exportableDiv).then((canvas) => {
+  html2canvas(exportableDiv, options).then((canvas) => {
     const image = canvas.toDataURL('image/png', 1.0);
 
     const a = document.createElement('a');
